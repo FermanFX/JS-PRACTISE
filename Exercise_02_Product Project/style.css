@@ -1,0 +1,332 @@
+@font-face {
+    font-family: playwritePL;
+    src: url(./PlaywritePL-VariableFont_wght.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'playwritePL', sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./9697946.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+}
+/* Axtarış bölməsi üçün stil */
+nav ul div {
+    display: flex;
+    align-items: center;
+    /* gap: 8px; */
+    /* background: rgba(255,255,255,0.7); */
+    border-radius: 24px;
+    /* padding: 4px 12px; */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+nav ul div button {
+    background: none;
+    border: none;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+    color: black;
+    font-size: 1rem;
+    transition: box-shadow 0.2s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+/* nav ul div button:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    opacity: 0.85;
+} */
+
+#Searcher_box {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0px 4px;
+    font-size: 1rem;
+    border-radius: 16px;
+    width: 120px;
+    transition: width 0.3s;
+}
+
+#Searcher_box:focus {
+    width: 180px;
+    background: #ffffff6a;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+}
+ul li{
+    margin: 0 15px;
+}
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    transform: translateX(-50%) scaleX(0);
+    width: 80%;
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #ff0000, #ff9900, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+    transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+nav a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    padding: 32px;
+}
+
+.product-card {
+    background: linear-gradient(135deg, #f8fafc 80%, #e0e7ff 100%);
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    padding: 18px 14px 16px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+    height: 23em;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    transform: translateY(-4px) scale(1.03);
+}
+
+.product-card::before {
+    content: "🦋";
+    font-size: 2em;
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    z-index: 2;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.product-card::after {
+    content: "S";
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4b0082;
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    z-index: 2;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.product-image {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    background: #fff;
+}
+
+.product-title {
+    font-size: 1.05rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+    text-align: center;
+    color: #333;
+    letter-spacing: 0.5px;
+}
+
+.product-brand {
+    font-size: 0.95rem;
+    color: #007bff;
+    margin-bottom: 2px;
+    font-weight: 500;
+}
+
+.product-desc {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 4px;
+    text-align: center;
+    min-height: 2em;
+    max-height: 3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-quantity,
+.product-nutrition,
+.product-score,
+.product-price {
+    font-size: 0.85rem;
+    color: #444;
+    margin-bottom: 2px;
+    text-align: center;
+}
+
+button {
+    margin-top: 6px;
+    padding: 6px 18px;
+    border-radius: 16px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    transition: background 0.3s, box-shadow 0.2s;
+}
+
+button:hover {
+    background-color: #333;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    opacity: 0.92;
+}
+footer {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+/* Mobil cihazlar üçün (max-width: 600px) */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px;
+    }
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+    .products-container {
+        grid-template-columns: 1fr;
+        padding: 8px;
+        gap: 8px;
+    }
+    .product-card {
+        padding: 8px;
+        font-size: 0.92rem;
+        height: 15em;
+    }
+    h1 {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    footer {
+        padding: 8px;
+        font-size: 0.85rem;
+        text-align: center;
+    }
+}
+
+/* Planşetlər üçün (min-width: 601px) və (max-width: 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+    .products-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        padding: 16px;
+    }
+    .product-card {
+        height: 20em;
+        padding: 12px;
+        font-size: 0.97rem;
+    }
+    nav {
+        padding: 14px;
+    }
+    h1 {
+        font-size: 1.3rem;
+    }
+    footer {
+        padding: 10px;
+        font-size: 0.88rem;
+    }
+}
+
+/* Desktop üçün (min-width: 901px) və (max-width: 1200px) */
+@media (min-width: 901px) and (max-width: 1200px) {
+    .products-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        padding: 20px;
+    }
+    .product-card {
+        height: 20em;
+        padding: 14px;
+        font-size: 1rem;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    footer {
+        padding: 14px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Böyük ekranlar üçün (min-width: 1201px) */
+@media (min-width: 1201px) {
+    .products-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        padding: 32px;
+    }
+    .product-card {
+        height: 25em;
+        padding: 16px;
+        font-size: 1.05rem;
+    }
+    h1 {
+        font-size: 1.7rem;
+    }
+    footer {
+        padding: 20px;
+        font-size: 1rem;
+    }
+}

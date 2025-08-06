@@ -1,0 +1,1 @@
+Fonts used in this design: \r\n\r\nThird party Fonts: \r\n\r\nFont: Karla \r\nAuthor: Jonny Pinhorn \r\nUrl: https://fonts.google.com/specimen/Karla \r\n\r\nFont: Meow Script \r\nAuthor: Robert Leuschke \r\nUrl: https://fonts.google.com/specimen/Meow+Script \r\n\r\n
